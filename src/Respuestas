@@ -1,0 +1,46 @@
+RESPUESTAS A PREGUNTAS INCLUIDAS EN LA TAREA
+
+1- ¿Cuáles son las estrategias?
+
+    * La interfaz Ataque y las clases AtaqueArco, AtaqueCuchillo y AtaqueEspada,
+      siendo estas tres últimas las estrategias concretas.
+
+2- ¿Está el código de los diferentes ataques mezclado?
+   ¿El código del ataque con espada es independiente del código del ataque con arco?
+   Relaciona esto con algún principio SOLID.
+
+   A) No, cada estrategia concreta está ubicada en una clase.
+   B) Sí, por encontrarse en clases independientes.
+   C) Single Responsibility Principle (SRP)
+
+3- ¿Para que vale la interface Ataque?
+
+    * Tiene una doble función: por un lado, se encarga de comunicar el contexto con las estrategias concretas y, por
+      otro, declara los métodos comunes a todas las estrategias concretas.
+
+4- ¿Qué clase o clases se encargan del papel de contexto?
+
+    * La clase Personaje y sus clases derivadas.
+
+5- ¿En que se parece y en que se diferencia el contexto de tu proyecto al contexto del Patrón teórico del boletín?
+
+    * En el proyecto del boletín el contexto está formado por una única clase, mientras que en el de mi proyecto
+      el contexto lo conforma una jerarquía de clases. Sin embargo, la función es exactamente la misma.
+
+6- ¿Quién es el Cliente?
+
+    * En mi proyecto, el Cliente lo conforman las clases del paquete main (ControlLucha y DDApp).
+
+7- ¿Como cambia el cliente de estrategia?
+
+    * A través del método setAtaque(Ataque ataque) ubicado en el contexto.
+
+8- ¿Para cambiar de estrategia, tiene que conocer el cliente detalles de implementación de la estrategia?
+
+    * Sí
+
+9- ¿Si creamos un nuevo tipo de ataque para un nuevo cliente, por ejemplo App2, es necesario modificar el cliente antiguo?
+   Relaciona esto con algún principio SOLID.
+
+   A) No es necesario, ya que el cliente no tiene en su interior el código de las estrategias
+   B) Se relaciona con el Open/Closed Principle
